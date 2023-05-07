@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Talk with Experts</title>
+</head>
+<body>
+<center>
+    <h1>Talk with Experts</h1>
+</center>
+<br><br><br>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+	<br><br><br><br>
+
+
+<a style="position: absolute; top:70px; right: 84px ;
+  background-color: forestgreen;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  font-weight : 400" href="{{ url_for('login') }}">Logout</a>
+
+
+{% for image in images %}
+    <div>
+        <h3>{{ image.filename }}</h3>
+        <center>
+        <img src="data:image/jpeg;base64,{{ image.data }}" width=600px; height=400px">
+        </center>
+
+        <h4>Comments:</h4>
+        <center>
+        <ul>
+            {% for comment in image.comments %}
+                <p style="color:blue"><strong>{{ comment.name }}:</strong> {{ comment.comment }}</p>
+            {% endfor %}
+        </ul>
+
+        <form method="POST">
+            <center>
+            <label>Name:</label>
+            <input type="text" name="name"><br><br><br>
+
+            <label>Comment:</label>
+            <textarea name="comment"></textarea><br>
+
+            <input type="hidden" name="image_id" value="{{ image.id }}">
+            <input type="submit" value="Submit">
+            </center>
+        </form>
+        </center>
+    </div>
+{% endfor %}
+
+</body>
+</html>

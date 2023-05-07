@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+        body {
+            background-image: url("/static/background/leaf.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+</style>
+<br>
+
+<h1 style="text-align: center;color:yellowgreen;font-family : Stencil Std">Registration Form</h1>
+<br>
+<body>
+<div class="container d-flex justify-content-center" >
+    <div class="row">
+        <div class="col-md-7 text-center">
+            <form action='#' class="form" method="POST">
+                <label style=" color: white; font-family:Constantia; font-size : 28px">Fullname</label>
+                <input style="
+    height: 35px;
+    width: 20%;
+    background: linear-gradient(to bottom, white, DarkGreen);
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 300;" type="text" name="fullname" required><br><br>
+                <label style=" color: white; font-family:Constantia; font-size : 28px">Username</label>
+                <input style="
+    height: 35px;
+    width: 20%;
+    background: linear-gradient(to bottom, white, DarkGreen);
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 300;" type="text" name="username" required><br><br>
+                <label style=" color: white; font-family:Constantia; font-size : 28px">Email</label>
+                <input style="
+    height: 35px;
+    width: 20%;
+    background: linear-gradient(to bottom, white, DarkGreen);
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 300;" type="email" name="email" required><br><br>
+</div>
+                <label style=" color: white; font-family:Constantia; font-size : 28px">Mobile</label>
+                <input style="
+    height: 35px;
+    width: 20%;
+    background: linear-gradient(to bottom, white, DarkGreen);
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 300;" type="number" name="mobilenumber" required>
+                <br><br>
+
+                <div class="col-md-13 text-center">
+                <label style=" color: white; font-family:Constantia; font-size : 28px">Password</label>
+                <input style="
+    height: 35px;
+    width: 20%;
+    background: linear-gradient(to bottom, white, DarkGreen);
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 300;" type="password" name="password" required><br><br>
+                <label style=" color: white; font-family:Constantia; font-size : 28px">Confirm Password</label>
+                <input style="
+    height: 35px;
+    width: 20%;
+    background: linear-gradient(to bottom, white, DarkGreen);
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 300;" type="password" name="confpassword"  required><br><br>
+
+                </div>
+        <center>
+                <label style=" color: white; font-family:Constantia; font-size : 28px">Category</label>
+                <select style="font-size:20px" name="category">
+                    <option value="Farmer">Farmer</option>
+                    <option value="Expert">Expert</option>
+                </select><br><br>
+                <input style=" background: yellowgreen; color: black; font-family:Constantia; font-weight: bold; font-size : 16px" type="submit" value="Register"><br><br>
+            </form>
+            <label style=" color: red">Existing User</label>
+            <a href="/login">Login</a><br>
+        </center>
+        </div>
+
+    </div>
+
+
+
+<script>
+    $(function() {
+        $('form').on('submit', function(e) {
+            var password = $('input[name="password"]').val();
+            var confpassword = $('input[name="confpassword"]').val();
+            if (password !== confpassword) {
+                e.preventDefault();
+                alert("Passwords do not match. Please try again.");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
